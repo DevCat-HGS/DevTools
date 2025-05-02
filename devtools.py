@@ -2,7 +2,6 @@ import sys
 import time
 import os
 from colorama import init, Fore, Style
-from tqdm import tqdm
 import random
 
 # Inicializar colorama para Windows
@@ -24,40 +23,31 @@ def type_effect(text, delay=0.05, color=Fore.GREEN):
         sys.stdout.write('\b')
     print()
 
-def show_banner():
-    colors = [Fore.CYAN, Fore.BLUE, Fore.MAGENTA]
-    banner = f"""
+def show_warning():
+    colors = [Fore.RED, Fore.YELLOW]
+    warning = f"""
     {random.choice(colors)}
     ┌─────────────────────────────────────────────────────────────────┐
-    │  ██████╗ ███████╗██╗   ██╗████████╗ ██████╗  ██████╗ ██╗      │
-    │  ██╔══██╗██╔════╝██║   ██║╚══██╔══╝██╔═══██╗██╔═══██╗██║      │
-    │  ██║  ██║█████╗  ██║   ██║   ██║   ██║   ██║██║   ██║██║      │
-    │  ██║  ██║██╔══╝  ╚██╗ ██╔╝   ██║   ██║   ██║██║   ██║██║      │
-    │  ██████╔╝███████╗ ╚████╔╝    ██║   ╚██████╔╝╚██████╔╝███████╗ │
-    │  ╚═════╝ ╚══════╝  ╚═══╝     ╚═╝    ╚═════╝  ╚═════╝ ╚══════╝ │
+    │                    ¡ADVERTENCIA IMPORTANTE!                     │
     │                                                                 │
-    │                 >_ Herramientas de Desarrollo                  │
-    │                 >_ powered by DevHarold 🐾                     │
+    │    Este software está diseñado con fines educativos y éticos    │
+    │    Versión: Developer                                           │
+    │                                                                 │
     └─────────────────────────────────────────────────────────────────┘
     """
-    print(banner + Style.RESET_ALL)
-    print(Fore.CYAN + '\n        [ GITHUB: ' + Fore.GREEN + 'DevCat-HGS' + Fore.CYAN + ' | Version: ' + Fore.GREEN + 'Developer' + Fore.CYAN + ' ]' + Style.RESET_ALL)
+    print(warning + Style.RESET_ALL)
 
 def main():
     clear_screen()
-    show_banner()
+    show_warning()
     
     # Preguntar si está listo
     print(Fore.YELLOW + "\n¿Estás listo para comenzar?" + Style.RESET_ALL)
     input(Fore.CYAN + "Presiona Enter para continuar..." + Style.RESET_ALL)
     
-    # Mostrar el prompt y ejecutar el comando
-    print()
-    type_effect('~$ sudo cat /dev/tools', delay=0.03)
-    
-    # Importar y mostrar el menú de herramientas
-    from tools.menu import show_menu
-    show_menu()
+    # Transferir control a banner.py
+    import banner
+    banner.main()
 
 if __name__ == '__main__':
     try:
