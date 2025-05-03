@@ -27,9 +27,15 @@ def show_japan_menu():
         print(Fore.YELLOW + "\nSeleccione una herramienta:")
         
         tools = [
-            "Traductor Japonés",
-            "Conversor de Kanji",
-            "Generador de Nombres Japoneses"
+            "SMS Bomber",
+            "Call Bomber",
+            "Mail Bomber",
+            "Whatsapp Bomber",
+            "Facebook Bomber",
+            "Instagram Bomber",
+            "Twitter Bomber",
+            "Telegram Bomber",
+            "Discord Bomber"
         ]
         
         for i, tool in enumerate(tools, 1):

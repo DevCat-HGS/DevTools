@@ -30,6 +30,7 @@ def show_menu():
             
             if option == 0:
                 print(Fore.YELLOW + "\n[*] Saliendo..." + Style.RESET_ALL)
+                os.system('cls' if os.name == 'nt' else 'clear')
                 sys.exit(0)
             elif 1 <= option <= len(tools):
                 if option == 1:  # Send IP
