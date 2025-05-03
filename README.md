@@ -9,7 +9,7 @@ DevTools es una suite de herramientas de desarrollo que proporciona diferentes u
 ## ⚙️ Requisitos
 
 - Python 3.x
-- (Bibliotecas)[https://github.com/DevCat-HGS/DevTools/blob/main/requirements.txt]
+- [Bibliotecas](https://github.com/DevCat-HGS/DevTools/blob/main/requirements.txt)
 
 ## 🚀 Instalación
 
