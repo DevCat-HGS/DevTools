@@ -10,7 +10,7 @@ def show_menu():
         # Lista de herramientas disponibles
         tools = [
             "Send IP",
-            "Herramienta 2",
+            "Japan",
             "Herramienta 3"
         ]
         
@@ -35,6 +35,9 @@ def show_menu():
                 if option == 1:  # Send IP
                     from tools.send_ip import show_send_ip_menu
                     show_send_ip_menu()
+                elif option == 2:  # Japan
+                    from tools.japan import show_japan_menu
+                    show_japan_menu()
                 else:
                     print(f"\n[*] Ejecutando {tools[option-1]}...")
                     # Aquí se implementará la lógica para ejecutar cada herramienta

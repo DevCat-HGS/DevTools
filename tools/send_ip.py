@@ -21,7 +21,7 @@ def show_send_ip_banner():
     └─────────────────────────────────────────────────────────────┘
     """
     print(banner + Style.RESET_ALL)
-    print(Fore.CYAN + '\n        [ Módulo: ' + Fore.GREEN + 'Send IP' + Fore.CYAN + ' | Estado: ' + Fore.GREEN + 'Activo' + Fore.CYAN + ' ]' + Style.RESET_ALL)
+    print(Fore.CYAN + '\n        [ Módulo: ' + Fore.GREEN + 'Send IP' + Fore.CYAN + ' | Version: ' + Fore.GREEN + '1.0' + Fore.CYAN + ' ]' + Style.RESET_ALL)
 
 def show_send_ip_menu():
     while True:
