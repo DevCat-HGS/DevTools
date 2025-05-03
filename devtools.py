@@ -24,13 +24,13 @@ def type_effect(text, delay=0.05, color=Fore.GREEN):
     print()
 
 def show_warning():
-    colors = [Fore.RED, Fore.YELLOW]
+    colors = [Fore.YELLOW]
     warning = f"""
     {random.choice(colors)}
     ┌─────────────────────────────────────────────────────────────────┐
     │                    ¡ADVERTENCIA IMPORTANTE!                     │
     │                                                                 │
-    │    Este software está diseñado con fines educativos y éticos    │
+    │    Este software debe de ser usado con suma precaucion          │
     │    Versión: Developer                                           │
     │                                                                 │
     └─────────────────────────────────────────────────────────────────┘
@@ -42,7 +42,7 @@ def main():
     show_warning()
     
     # Preguntar si está listo
-    print(Fore.YELLOW + "\n¿Estás listo para comenzar?" + Style.RESET_ALL)
+    print(Fore.BLUE + "\n¿Estás listo para comenzar?" + Style.RESET_ALL)
     input(Fore.CYAN + "Presiona Enter para continuar..." + Style.RESET_ALL)
     
     # Transferir control a banner.py

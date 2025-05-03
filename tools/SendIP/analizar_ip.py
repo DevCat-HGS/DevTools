@@ -3,6 +3,7 @@ import platform
 import subprocess
 import re
 import nmap  # Asegúrate de tener instalado python-nmap
+from tqdm import tqdm  # Para la barra de progreso
 
 def ping_host(ip):
     print(f"[+] Haciendo ping a {ip}...")
@@ -59,7 +60,11 @@ def escanear_puertos(ip):
     try:
         # Escaneo completo con detección de versiones y scripts de vulnerabilidades
         print("[*] Fase 1: Escaneo inicial de puertos...")
-        scanner.scan(ip, arguments='-p- -T4 --min-rate 1000')
+        # Primero obtenemos el total de puertos a escanear (65535)
+        total_puertos = 65535
+        with tqdm(total=total_puertos, desc="Escaneando puertos", bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt}") as pbar:
+            scanner.scan(ip, arguments='-p- -T4 --min-rate 1000')
+            pbar.update(total_puertos)  # Completamos la barra cuando termina el escaneo inicial
         
         puertos_abiertos = []
         for protocolo in scanner[ip].all_protocols():
@@ -76,7 +81,9 @@ def escanear_puertos(ip):
         print(f"[+] Encontrados {len(puertos_abiertos)} puertos abiertos. Analizando servicios y vulnerabilidades...")
         
         # Escaneo detallado de los puertos abiertos
-        scanner.scan(ip, ports=puertos_str, arguments='-sC -sV -A --version-intensity 5')
+        with tqdm(total=len(puertos_abiertos), desc="Analizando servicios", bar_format="{l_bar}{bar}| {n_fmt}/{total_fmt}") as pbar:
+            scanner.scan(ip, ports=puertos_str, arguments='-sC -sV -A --version-intensity 5')
+            pbar.update(len(puertos_abiertos))  # Completamos la barra cuando termina el análisis
         
         resultados = []
         for protocolo in scanner[ip].all_protocols():

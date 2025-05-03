@@ -25,7 +25,7 @@ def type_effect(text, delay=0.05, color=Fore.GREEN):
     print()
 
 def show_initialization():
-    type_effect('~$ sudo cat /dev/tools', delay=0.03)
+    type_effect('~$ cat init /dev/tools -y', delay=0.03)
     time.sleep(0.3)
     
     # Barra de progreso de inicialización
@@ -38,7 +38,7 @@ def show_initialization():
     time.sleep(0.5)
 
 def show_banner():
-    colors = [Fore.GREEN, Fore.BLUE, Fore.MAGENTA, Fore.CYAN]
+    colors = [Fore.BLUE, Fore.MAGENTA, Fore.CYAN]
     banner = f"""
     {random.choice(colors)}
     ┌─────────────────────────────────────────────────────────────────┐

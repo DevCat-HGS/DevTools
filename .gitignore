@@ -3,22 +3,6 @@ __pycache__/
 *.py[cod]
 *$py.class
 *.so
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
 
 # Entornos virtuales
 venv/
@@ -33,32 +17,38 @@ ENV/
 *.swo
 *~
 
-# Logs y bases de datos
+# Logs y archivos temporales
 *.log
-*.sqlite
+*.tmp
+*.temp
+*.bak
 
 # Sistema operativo
 .DS_Store
 Thumbs.db
 
-# Archivos temporales
-*.tmp
-*.temp
-*.bak
-
-# Archivos de configuración local
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# Archivos específicos del proyecto
+tools/__pycache__/
+tools/*.pyc
+*.egg-info/
+.installed.cfg
 
 # Dependencias
-node_modules/
+requirements.txt.lock
+pip-log.txt
 
-# Archivos de compilación
-*.pyc
-*.pyo
-*.pyd
-*.so
-*.dll
-*.dylib
+# Archivos de configuración
+.env.local
+.env.development
+.env.test
+.env.production
+
+# Archivos de caché
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Archivos de distribución
+dist/
+build/
+*.egg
